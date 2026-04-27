@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me-Conecta - UTFPR</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        .menu-container { display: flex; justify-content: center; gap: 20px; margin-top: 30px; }
+        .card {
+            border: 1px solid #ccc; padding: 20px; border-radius: 10px;
+            width: 200px; text-decoration: none; color: black; transition: 0.3s;
+        }
+        .card:hover { background-color: #f0f0f0; transform: scale(1.05); }
+        h1 { color: #0056b3; }
+    </style>
+</head>
+<body>
+
+<h1>Painel Me-Conecta</h1>
+<p>Núcleo de Acompanhamento Psicopedagógico e Assistência Estudantil (NUAPE)</p>
+
+<div class="menu-container">
+    <a href="/agendar.html" class="card">
+        <h3>📝 Solicitar Atendimento</h3>
+        <p>Descreva sua situação para a triagem.</p>
+    </a>
+
+    <a href="/agendamentos/listar" class="card">
+        <h3>📋 Ver Agendamentos</h3>
+        <p>Lista de solicitações enviadas.</p>
+    </a>
+
+    <a href="/usuarios" class="card">
+        <h3>👥 Gestão de Usuários</h3>
+        <p>Ver alunos e profissionais cadastrados.</p>
+    </a>
+</div>
+
+</body>
+</html>
