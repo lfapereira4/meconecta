@@ -1,5 +1,5 @@
 package meConecta.service;
-
+import meConecta.model.Agendamento;
 import meConecta.model.Usuario;
 import meConecta.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
@@ -8,17 +8,25 @@ import java.util.Optional;
 @Service
 public class UsuarioService {
 
-    /*este arquivo tem a lógica que lê a "situação-problema" do aluno e decide qual profissional deve atendê-lo*/
-
     private final UsuarioRepository repository;
 
-    // Construtor para o Spring injetar o repositório automaticamente
     public UsuarioService(UsuarioRepository repository) {
         this.repository = repository;
     }
 
+    // --- NOVA LÓGICA DE TRIAGEM ---
+    public void realizarTriagem(Agendamento agendamento) {
+        String relato = agendamento.getDescricaoProblema().toLowerCase();
+
+        // Lógica de Prioridade
+        if (relato.contains("urgente") || relato.contains("pânico") || relato.contains("crise") || relato.contains("ajuda")) {
+            agendamento.setStatus("PRIORIDADE_ALTA");
+        } else {
+            agendamento.setStatus("PENDENTE");
+        }
+    }
+
     public Usuario salvarUsuario(Usuario usuario) {
-        // Aqui futuramente aplicaremos a criptografia citada no artigo
         return repository.save(usuario);
     }
 
