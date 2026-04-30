@@ -4,6 +4,8 @@ import meConecta.model.Usuario;
 import meConecta.service.UsuarioService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/usuarios")
 
@@ -13,6 +15,11 @@ public class UsuarioController {
 
     public UsuarioController(UsuarioService service) {
         this.service = service;
+    }
+
+    @GetMapping("/listar-todos")
+    public List<Usuario> buscarTodos() {
+        return service.buscarTodos();
     }
 
     @PostMapping

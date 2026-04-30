@@ -17,8 +17,14 @@ public class SecurityConfig {
                         .requestMatchers("/", "/index.html", "/agendar.html", "/agendamentos").permitAll() // Portas abertas para o aluno
                         .anyRequest().authenticated() // Todo o resto (como a lista) exige LOGIN
                 )
-                .formLogin(withDefaults()) // Reativa aquela tela de login bonitinha
-                .logout(logout -> logout.permitAll());
+                //.formLogin(withDefaults()) // Reativa aquela tela de login bonitinha
+                //.logout(logout -> logout.permitAll());
+
+                .formLogin(form -> form
+                .loginPage("/login.html") // Define sua página personalizada
+                .loginProcessingUrl("/login") // O Spring cuida do processamento
+                .defaultSuccessUrl("/", true) // Para onde vai depois de logar
+                .permitAll());
 
         return http.build();
     }

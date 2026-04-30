@@ -4,11 +4,12 @@ import meConecta.model.Agendamento;
 import meConecta.repository.AgendamentoRepository;
 import meConecta.service.UsuarioService; // Importe o seu Service
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
 @RequestMapping("/agendamentos")
+@CrossOrigin(origins = "*") // Adicione esta linha para permitir que o JS acesse a API
+
 public class AgendamentoController {
 
     // 1. Declaramos as duas ferramentas que o Controller vai usar
@@ -48,5 +49,14 @@ public class AgendamentoController {
     @GetMapping("/listar")
     public List<Agendamento> listarTodos() {
         return repository.findAll();
+    }
+
+
+    @PostMapping("/{id}/concluir")
+    public void concluirAgendamento(@PathVariable Long id) {
+        repository.findById(id).ifPresent(agendamento -> {
+            agendamento.setStatus("CONCLUIDO");
+            repository.save(agendamento);
+        });
     }
 }
