@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Me-Conecta</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding-top: 100px; background-color: #f4f4f4; }
+        .login-container { background: white; padding: 30px; border-radius: 10px; display: inline-block; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        input { display: block; margin: 10px auto; padding: 10px; width: 200px; }
+        button { padding: 10px 20px; background-color: #0056b3; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .btn-voltar { display: block; margin-top: 15px; color: #666; text-decoration: none; font-size: 14px; }
+    </style>
+</head>
+<body>
+<div class="login-container">
+    <h2>Área Restrita </h2>
+    <form action="/login" method="post">
+        <input type="text" name="username" placeholder="Usuário" required>
+        <input type="password" name="password" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+    </form>
+
+    <a href="/" class="btn-voltar">← Voltar para a Página Inicial</a>
+</div>
+</body>
+</html>

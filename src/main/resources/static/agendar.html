@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me-Conecta - Solicitação de Atendimento NUAPE</title>
+    <style>
+        /* Estilos Gerais (Reset) */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5; /* Fundo cinza bem claro, moderno */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ocupa a altura toda da tela */
+            padding: 20px;
+        }
+
+        /* Container Principal (O "Card") */
+        .form-card {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra suave */
+            width: 100%;
+            max-width: 500px; /* Largura máxima para não esticar muito */
+            border-top: 5px solid #ffcc00; /* Linha amarela no topo, padrão UTFPR */
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Estilização do Campo de Texto */
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            color: #333;
+            font-family: inherit;
+            resize: vertical; /* Permite esticar apenas para baixo */
+            margin-bottom: 30px;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #ffcc00; /* Cor de destaque ao clicar */
+            box-shadow: 0 0 5px rgba(255, 204, 0, 0.5);
+        }
+
+        /* Estilização dos Botões */
+        .button-group {
+            display: flex;
+            justify-content: space-between; /* Botões nas pontas */
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-align: center;
+            display: inline-block;
+        }
+
+        /* Botão Enviar (Amarelo UTFPR) */
+        .btn-enviar {
+            background-color: #ffcc00;
+            color: #1a1a1a;
+            flex-grow: 1; /* Estica para ocupar o espaço */
+        }
+
+        .btn-enviar:hover {
+            background-color: #e6b800; /* Escurece um pouco ao passar o mouse */
+        }
+
+        /* Botão Voltar (Estilo outline neutro) */
+        .btn-voltar {
+            background-color: transparent;
+            color: #666;
+            border: 2px solid #ccc;
+        }
+
+        .btn-voltar:hover {
+            background-color: #eee;
+            color: #333;
+            border-color: #999;
+        }
+
+        /* Responsividade para celulares */
+        @media (max-width: 400px) {
+            .button-group {
+                flex-direction: column-reverse; /* Empilha os botões */
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-card">
+    <h2>Solicitação de Atendimento</h2>
+
+    <form action="/agendamentos" method="post">
+        <div class="input-container">
+            <label for="descricaoProblema">Diga-nos o que está acontecendo:</label>
+            <textarea
+                    name="descricaoProblema"
+                    id="descricaoProblema"
+                    rows="6"
+                    placeholder="Descreva detalhadamente sua situação para que nossa equipe possa realizar a triagem..."
+                    required></textarea>
+        </div>
+
+        <div class="button-group">
+            <a href="/" class="btn btn-voltar">← Início</a>
+            <button type="submit" class="btn btn-enviar">Enviar Pedido</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
