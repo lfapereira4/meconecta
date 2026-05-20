@@ -23,7 +23,7 @@ public class AgendamentoController {
     }
 
     @PostMapping
-    public String realizarAgendamento(@RequestParam String descricaoProblema) {
+    public Agendamento realizarAgendamento(@RequestParam String descricaoProblema) {
         // Criamos o objeto agendamento com o que o aluno escreveu
         Agendamento novo = new Agendamento();
         novo.setDescricaoProblema(descricaoProblema);
@@ -33,9 +33,9 @@ public class AgendamentoController {
 
         // Agora que o Service já "carimbou" o agendamento com o status correto, salvamos
         repository.save(novo);
-
+        return novo;
         // Retornamos HTML com botões de navegação
-        return "<html><body style='font-family: Arial; text-align: center; padding-top: 50px;'>" +
+   /*     return "<html><body style='font-family: Arial; text-align: center; padding-top: 50px;'>" +
                 "<h2>Pedido enviado com sucesso!</h2>" +
                 "<p>Status da triagem: <strong>" + novo.getStatus() + "</strong></p>" +
                 "<hr style='width: 50%'>" +
@@ -43,7 +43,8 @@ public class AgendamentoController {
                 "   <a href='/' style='padding: 10px 20px; background-color: #0056b3; color: white; text-decoration: none; border-radius: 5px; margin-right: 10px;'>🏠 Voltar ao Início</a>" +
                 "   <a href='/agendar.html' style='padding: 10px 20px; background-color: #6c757d; color: white; text-decoration: none; border-radius: 5px;'>➕ Nova Solicitação</a>" +
                 "</div>" +
-                "</body></html>";
+                "</body></html>";*/
+
     }
 
     @GetMapping("/listar")

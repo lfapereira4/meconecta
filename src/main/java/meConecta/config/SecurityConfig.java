@@ -14,7 +14,14 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) // Mantemos desativado para o formulário POST funcionar
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/index.html", "/agendar.html", "/agendamentos").permitAll() // Portas abertas para o aluno
+                        .requestMatchers(
+                                "/",
+                                "/index.html",
+                                "/agendar.html",
+                                "/login.html",
+                                "/agendamentos/**",
+                                "/usuarios/**"
+                        ).permitAll()
                         .anyRequest().authenticated() // Todo o resto (como a lista) exige LOGIN
                 )
                 //.formLogin(withDefaults()) // Reativa aquela tela de login bonitinha
