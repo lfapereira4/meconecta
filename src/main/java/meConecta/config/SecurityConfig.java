@@ -16,7 +16,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
                                 "/",
-                                "/index.html",
+                                "/index.htm" +
+                                        "l",
                                 "/agendar.html",
                                 "/login.html",
                                 "/agendamentos/**",
