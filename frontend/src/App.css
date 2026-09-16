@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f4f6f8;
+  color: #1f2933;
+}
+
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+.topo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.topo h1 {
+  margin: 0;
+  color: #2563eb;
+}
+
+.topo nav {
+  display: flex;
+  gap: 16px;
+}
+
+.topo nav a {
+  text-decoration: none;
+  color: #4b5563;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.topo nav a.active {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+  font-weight: 600;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.subtitulo {
+  color: #6b7280;
+  margin-top: -8px;
+}
+
+.form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form legend {
+  font-weight: 600;
+  margin-bottom: 8px;
+  padding: 0;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.form input,
+.form select,
+.form textarea {
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+button.secundario {
+  background: #e5e7eb;
+  color: #1f2933;
+}
+
+.sucesso {
+  color: #15803d;
+  font-weight: 600;
+}
+
+.erro {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.cabecalho-painel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.lista-agendamentos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.agendamento {
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #9ca3af;
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.agendamento.status-prioridade_alta {
+  border-left-color: #dc2626;
+}
+
+.agendamento.status-pendente {
+  border-left-color: #d97706;
+}
+
+.agendamento.status-concluido {
+  border-left-color: #16a34a;
+}
+
+.agendamento.status-cancelado {
+  border-left-color: #9ca3af;
+  opacity: 0.7;
+}
+
+.agendamento-topo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #4b5563;
+}
+
+.tipo {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.descricao {
+  margin: 8px 0;
+}
+
+.meta {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.acoes {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
