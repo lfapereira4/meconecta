@@ -1,191 +1,360 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background: #f4f6f8;
-  color: #1f2933;
-}
-
 .app {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 24px 16px 64px;
-}
-
-.topo {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 24px;
+  min-height: 100vh;
 }
 
-.topo h1 {
-  margin: 0;
-  color: #2563eb;
+/* ---------- Cabeçalho ---------- */
+.topo {
+  background: linear-gradient(135deg, var(--azul-escuro), var(--azul));
+  color: var(--branco);
+  border-bottom: 4px solid var(--laranja);
+  box-shadow: 0 2px 8px rgba(0, 53, 106, 0.25);
+}
+
+.topo-conteudo {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+}
+
+.marca h1 {
+  font-size: 1.35rem;
+  letter-spacing: 0.2px;
+}
+
+.marca-sub {
+  font-size: 0.78rem;
+  opacity: 0.85;
 }
 
 .topo nav {
   display: flex;
-  gap: 16px;
+  gap: 6px;
 }
 
 .topo nav a {
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  color: #4b5563;
-  padding-bottom: 4px;
-  border-bottom: 2px solid transparent;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.15s;
+}
+
+.topo nav a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--branco);
 }
 
 .topo nav a.active {
-  color: #2563eb;
-  border-bottom-color: #2563eb;
-  font-weight: 600;
+  background: var(--branco);
+  color: var(--azul);
+}
+
+/* ---------- Conteúdo ---------- */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 32px 24px;
 }
 
 .card {
-  background: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 32px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.card h2 {
+  color: var(--azul);
+  font-size: 1.5rem;
 }
 
 .subtitulo {
-  color: #6b7280;
-  margin-top: -8px;
+  color: var(--texto-suave);
+  margin: 6px 0 24px;
 }
 
-.form fieldset {
-  border: none;
-  padding: 0;
-  margin: 0 0 20px;
+.rodape {
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 0.82rem;
+  padding: 20px 24px;
+  border-top: 1px solid var(--borda);
+  background: var(--branco);
+}
+
+/* ---------- Formulário ---------- */
+.form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 22px;
 }
 
-.form legend {
+fieldset {
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 18px 20px 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #fbfcfe;
+}
+
+legend {
+  padding: 0 8px;
   font-weight: 600;
-  margin-bottom: 8px;
-  padding: 0;
+  color: var(--azul);
+  font-size: 0.95rem;
 }
 
-.form label {
+label {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  font-size: 14px;
-  color: #374151;
+  gap: 6px;
+  font-weight: 500;
+  font-size: 0.92rem;
 }
 
-.form input,
-.form select,
-.form textarea {
-  padding: 8px 10px;
-  border: 1px solid #d1d5db;
+input,
+select,
+textarea {
+  font: inherit;
+  padding: 11px 12px;
+  border: 1px solid var(--borda);
   border-radius: 8px;
-  font-size: 14px;
-  font-family: inherit;
+  background: var(--branco);
+  color: var(--texto);
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
+textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--azul);
+  box-shadow: 0 0 0 3px rgba(0, 74, 141, 0.15);
+}
+
+/* ---------- Botões ---------- */
 button {
-  background: #2563eb;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
+  font: inherit;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 20px;
+  background: var(--laranja);
+  color: #2b1a00;
+  transition: background 0.15s, transform 0.05s;
+}
+
+button:hover:not(:disabled) {
+  background: var(--laranja-escuro);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(1px);
 }
 
 button:disabled {
   opacity: 0.6;
-  cursor: default;
+  cursor: not-allowed;
 }
 
 button.secundario {
-  background: #e5e7eb;
-  color: #1f2933;
+  background: var(--branco);
+  color: var(--vermelho);
+  border: 1px solid var(--vermelho);
+}
+
+button.secundario:hover:not(:disabled) {
+  background: var(--vermelho-claro);
+}
+
+/* ---------- Mensagens ---------- */
+.sucesso,
+.erro {
+  margin: 20px 0 0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 500;
 }
 
 .sucesso {
-  color: #15803d;
-  font-weight: 600;
+  background: var(--verde-claro);
+  color: var(--verde);
+  border: 1px solid #b7e1c8;
 }
 
 .erro {
-  color: #b91c1c;
-  font-weight: 600;
+  background: var(--vermelho-claro);
+  color: var(--vermelho);
+  border: 1px solid #f3c1bb;
 }
 
+/* ---------- Painel NUAPE ---------- */
 .cabecalho-painel {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
 .lista-agendamentos {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .agendamento {
-  border: 1px solid #e5e7eb;
-  border-left: 4px solid #9ca3af;
-  border-radius: 8px;
-  padding: 14px 16px;
+  border: 1px solid var(--borda);
+  border-left: 5px solid var(--azul);
+  border-radius: 10px;
+  padding: 16px 18px;
+  background: var(--branco);
 }
 
 .agendamento.status-prioridade_alta {
-  border-left-color: #dc2626;
+  border-left-color: var(--vermelho);
+  background: #fffafa;
 }
 
 .agendamento.status-pendente {
-  border-left-color: #d97706;
+  border-left-color: var(--laranja);
 }
 
 .agendamento.status-concluido {
-  border-left-color: #16a34a;
+  border-left-color: var(--verde);
 }
 
 .agendamento.status-cancelado {
-  border-left-color: #9ca3af;
-  opacity: 0.7;
+  border-left-color: #9aa5b1;
+  opacity: 0.8;
 }
 
 .agendamento-topo {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .badge {
-  font-size: 12px;
+  font-size: 0.78rem;
   font-weight: 700;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: var(--azul-claro);
+  color: var(--azul);
   text-transform: uppercase;
-  color: #4b5563;
+  letter-spacing: 0.4px;
+}
+
+.status-pendente .badge {
+  background: var(--amarelo-claro);
+  color: #a35f00;
+}
+
+.status-prioridade_alta .badge {
+  background: var(--vermelho-claro);
+  color: var(--vermelho);
+}
+
+.status-concluido .badge {
+  background: var(--verde-claro);
+  color: var(--verde);
+}
+
+.status-cancelado .badge {
+  background: #eceff3;
+  color: #5b6675;
 }
 
 .tipo {
-  font-size: 12px;
-  color: #6b7280;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  padding: 3px 9px;
 }
 
 .descricao {
-  margin: 8px 0;
+  margin: 0 0 10px;
+  font-size: 1rem;
 }
 
 .meta {
-  font-size: 13px;
-  color: #6b7280;
+  margin: 0;
+  color: var(--texto-suave);
+  font-size: 0.88rem;
 }
 
 .acoes {
   display: flex;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--borda);
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 640px) {
+  main {
+    padding: 20px 14px;
+  }
+
+  .card {
+    padding: 20px 16px;
+  }
+
+  .topo-conteudo {
+    padding: 12px 14px;
+  }
+
+  .topo nav {
+    width: 100%;
+  }
+
+  .topo nav a {
+    flex: 1;
+    text-align: center;
+    padding: 9px 8px;
+  }
+
+  .cabecalho-painel {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
